@@ -1,0 +1,29 @@
+﻿@using DataAccesLayer
+@{
+    ViewBag.Title = "Fatura Listesi";
+}
+@model List<ContactBill>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Fatura Sahibi Adı</th>
+            <th scope="col">Fatura Sahibi Soyadı</th>
+            <th scope="col">Link</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.ID</th>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td><a href="@item.DownloadLink" target="_blank" download=""> @item.DownloadLink</a> </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

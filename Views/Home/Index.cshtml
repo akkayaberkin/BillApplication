@@ -1,0 +1,41 @@
+﻿@using DataAccesLayer
+@{
+    ViewBag.Title = "Home Page";
+}
+@model List<BillTemplate>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Adı</th>
+            <th scope="col">Link</th>
+            <th scope="col">Aktiflik Durumu</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ID</th>
+            <td>@item.Name</td>
+            <td><a href="@item.TemplatePath"> @item.TemplatePath</a> </td>
+            <td>
+                @if (item.IsInUse == true)
+                {
+                    <span class="badge bg-success">Aktif</span>
+
+                }
+                else
+                {
+                    <span class="badge bg-danger">Pasif</span>
+
+                }
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>

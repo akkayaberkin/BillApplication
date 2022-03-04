@@ -4,5 +4,5 @@
 
 1- Add Template Page </br>
 2- List of Templates </br>
-3- You can see your bill templates </br>
+3- List of bill templates </br>
 # Project physically saves files in this folder: "OlusturalanFaturalar"
